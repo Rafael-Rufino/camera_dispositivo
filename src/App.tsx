@@ -1,5 +1,6 @@
 import CaptureImage from "./components/CaptureImage";
 import { WebcamCapture } from "./components/WebcamCapture";
+
 import useMobile from "./utils/screenDemension";
 
 function App() {
@@ -8,9 +9,10 @@ function App() {
     <>
       <div
         style={{
-          display: "block",
+          display: "flex",
           alignItems: "center",
-          flexDirection: "column-reverse",
+          justifyContent: "center",
+          flexDirection: "column",
         }}
       >
         {isMobile ? (
@@ -25,10 +27,14 @@ function App() {
             <CaptureImage />
           </div>
         ) : (
-          <>
+          <div
+            style={{
+              display: "block",
+            }}
+          >
             <WebcamCapture />
             <CaptureImage />
-          </>
+          </div>
         )}
       </div>
     </>
