@@ -1,0 +1,20 @@
+.container {
+  height: "100%";
+  text-align: center;
+  display: "flex";
+  justify-content: center;
+  align-items: center;
+  border: "1px solid black";
+}
+
+.imgBox {
+  max-width: "80%";
+  max-height: "80%";
+  margin: "10px";
+}
+
+.imgIcon {
+  height: "inherit";
+  max-width: "inherit";
+  border-radius: "50%";
+}
