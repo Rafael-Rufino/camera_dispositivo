@@ -7,11 +7,10 @@ export const WebcamCapture = () => {
   const webcamRef = useRef<Webcam>(null as any);
   const [imgSrc, setImgSrc] = useState<string | null>(null);
   const [cameraEnabled, setCameraEnabled] = useState<boolean>(false);
-
+  console.log(imgSrc);
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
     setImgSrc(imageSrc);
-    console.log(imgSrc);
     setCameraEnabled(true);
   }, [webcamRef, setImgSrc]);
   const videoConstraints = {
