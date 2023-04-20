@@ -11,6 +11,7 @@ export const WebcamCapture = () => {
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
     setImgSrc(imageSrc);
+    console.log(imgSrc);
     setCameraEnabled(true);
   }, [webcamRef, setImgSrc]);
   const videoConstraints = {
@@ -18,7 +19,7 @@ export const WebcamCapture = () => {
     height: 480,
     facingMode: "user",
   };
-  console.log(imgSrc);
+
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -32,8 +33,11 @@ export const WebcamCapture = () => {
         )}
         {imgSrc && <img src={imgSrc} />}
       </div>
-      <button onClick={() => capture()}>
-        <FiCamera size="40px" color="blue" />
+      <button
+        onClick={() => capture()}
+        title={cameraEnabled ? "Tirar foto" : "Abrir camera"}
+      >
+        <FiCamera size="40px" color={cameraEnabled ? "red" : "blue"} />
       </button>
     </>
   );
